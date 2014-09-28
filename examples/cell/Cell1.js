@@ -1,17 +1,18 @@
-define('cell/Cell1',['util','organic'], function (util, organic) {
+define('cell/Cell1',
+	['module', 'exports', 'require','util','organic'],
+	function (module, exports, require) {
+
 
 	var util = require('util');
 	var Cell = require('organic').Cell;
 
 
-	var Cell1 = function Cell1 (dna, core, callback) {
+	module.exports = function Cell1 (dna, core, callback) {
 		Cell.call(this, dna, core, callback);
 		//debugger;
 	}
 
-	util.inherits(Cell1, Cell);
-
-	return Cell;
+	util.inherits(module.exports, Cell);
 
 
 });
