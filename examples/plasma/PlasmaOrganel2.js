@@ -1,17 +1,16 @@
-require.register('plasma/PlasmaOrganel2', function (module, exports, require) {
-
+define('plasma/PlasmaOrganel2',['util','organic'], function () {
 
 var util = require('util');
 var Organel = require('organic').Organel,
 	Chemical = require('organic').Chemical;
 
 
-module.exports = function PlasmaOrganel2 (plasma, config) {
+var PlasmaOrganel2 = function PlasmaOrganel2 (plasma, config) {
 	Organel.call(this, plasma);
-	debugger;
+	//debugger;
 
 	this.on('DoSomething', function (chemical, sender, callback) {
-		debugger;
+		//debugger;
 		
 		console.log('PlasmaOrganel2 doing something');
 		if (callback) callback('PlasmaOrganel2');
@@ -24,7 +23,8 @@ module.exports = function PlasmaOrganel2 (plasma, config) {
 	// the Organel can emit messages too
 }
 
-util.inherits(module.exports, Organel);
+util.inherits(PlasmaOrganel2, Organel);
 
+return PlasmaOrganel2;
 
 });
